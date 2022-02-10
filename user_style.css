@@ -1,0 +1,1263 @@
+/* _______________________________________________essential/common part__________________________________________ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;800&display=swap");
+:root {
+  --purple: #814096;
+  --pink: #f83292;
+  --gradient: linear-gradient(90deg, var(--purple), var(--pink));
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  scroll-behavior: smooth;
+}
+
+*::-moz-selection {
+  background: var(--pink);
+  color: #fff;
+}
+
+*::selection {
+  background: var(--pink);
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #f9f9f9;
+}
+
+section {
+  min-height: 100vh;
+  padding: 0 9%;
+  padding-top: 7.5rem;
+  padding-bottom: 2rem;
+}
+
+.about {
+  padding-top: 0rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 3rem;
+  border-radius: 5rem;
+  background: var(--gradient);
+  font-size: 1.7rem;
+  color: #fff;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.heading {
+  font-weight: bold;
+  text-align: center;
+  background: var(--gradient);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+/* _____________________________________________________loader part___________________________________________________________ */
+#page {
+  display: none;
+}
+
+#loader {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+}
+
+#loader img {
+  width: 100%;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 7.5rem;
+  right: 1.5rem;
+  z-index: 100;
+}
+
+.scroll-top img {
+  width: 9rem;
+}
+
+@-webkit-keyframes zoomInOut {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@keyframes zoomInOut {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@-webkit-keyframes spin1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes float {
+  0%,
+  100% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+  50% {
+    -webkit-transform: translateY(-9.5rem);
+            transform: translateY(-9.5rem);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+  50% {
+    -webkit-transform: translateY(-9.5rem);
+            transform: translateY(-9.5rem);
+  }
+}
+
+@-webkit-keyframes float1 {
+  100%,
+  0% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+  50% {
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem);
+  }
+}
+
+@keyframes float1 {
+  100%,
+  0% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+  50% {
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem);
+  }
+}
+
+/* ___________________________________________________________header and navbar______________________________________________________ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 2rem 9%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 2.5rem;
+  color: var(--purple);
+  text-decoration: none;
+}
+
+header .logo span {
+  color: var(--pink);
+  text-decoration: none;
+}
+
+header .navbar a {
+  font-size: 2rem;
+  margin-left: 0.7rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--purple);
+  text-decoration: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+header .navbar a.active {
+  background-color: var(--purple);
+  color: #fff;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header .navbar a:hover {
+  background-color: var(--purple);
+  color: #fff;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header input {
+  display: none;
+}
+
+header label {
+  font-size: 3rem;
+  color: var(--purple);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* ________________________________________________landing page__________________________________________________________ */
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: url(home.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .image img {
+  width: 50vw;
+}
+
+.home #user_main img {
+  width: 50vw;
+  -webkit-animation: float 4s linear infinite;
+          animation: float 4s linear infinite;
+}
+
+.home #seller_image {
+  z-index: 1000000000000;
+}
+
+.typing {
+  position: relative;
+  width: 100vw;
+  height: 10%;
+  margin-top: -9%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content a {
+  font-size: 2rem;
+  margin-left: 0.7rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--purple)), to(var(--pink)));
+  background-image: linear-gradient(90deg, var(--purple), var(--pink));
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.content a.active,
+.content a:hover {
+  padding: 0.4rem 0.9rem;
+  color: white;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.home .content h3 {
+  font-size: 60px;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.home .content #launching_soon {
+  font-size: 4.5rem;
+  color: var(--purple);
+  text-transform: uppercase;
+}
+
+.home .content h3 span {
+  color: var(--pink);
+  text-transform: uppercase;
+}
+
+.home .content p {
+  font-size: 1.7rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
+/* ______________________________________________________________About us________________________________________________________ */
+.about .column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.about {
+  min-height: 70vh;
+}
+
+.about .column .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  z-index: -10;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.about .column .image img {
+  width: 105%;
+}
+
+.about .column .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.about .column .content h3 {
+  font-size: 3rem;
+  color: #666;
+}
+
+.about {
+  padding-top: 7.5rem;
+}
+
+.about .column .content p {
+  font-size: 1.5rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
+.about .column .content .buttons a:last-child {
+  margin-left: 2rem;
+}
+
+.teaser .column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#teaser {
+  background: white;
+  min-height: 70vh;
+}
+
+.teaser .column .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  z-index: -10;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  z-index: 999;
+}
+
+.teaser .column .image img {
+  width: 105%;
+}
+
+.teaser .column .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.teaser .column .content h3 {
+  font-size: 3rem;
+  color: #666;
+}
+
+.teaser .column .content p {
+  font-size: 1.9rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
+.teaser .column .content .buttons a:last-child {
+  margin-left: 2rem;
+}
+
+.newsletter .alert {
+  text-align: center;
+  padding: 10px;
+  background: #79c879;
+  color: white;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.review .box-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/* ______________________________________________________________review/testimonials_________________________________________________________ */
+.review .box {
+  background: #fff;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0.5rem 1rem var(--purple);
+          box-shadow: 0 0.5rem 1rem var(--purple);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30rem;
+          flex: 1 1 30rem;
+  border-radius: 1rem;
+  /* cursor: auto; */
+  height: 450px;
+}
+
+.review {
+  background: white;
+}
+
+.review .box .fa-quote-right {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 8rem;
+  color: var(--pink);
+  opacity: 0.3;
+}
+
+.review .box .user img {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: inline-block;
+  height: 10rem;
+  width: 10rem;
+  margin-top: 2rem;
+  -webkit-animation: zoomInOut 7s linear infinite;
+          animation: zoomInOut 7s linear infinite;
+}
+
+.review .box .user h3 {
+  color: var(--pink);
+  font-size: 2rem;
+}
+
+.review .box .user .stars i {
+  color: var(--purple);
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+
+.review .box .user .personal_links i {
+  color: var(--pink);
+  font-size: 4rem;
+  padding: 1rem 1rem;
+}
+
+.footer .box i {
+  color: white;
+  font-size: 4rem;
+  padding: 1rem 1rem;
+}
+
+.review .box .user .personal_links i:hover {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.review .box .comment {
+  color: #666;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+.pricing .box-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.pricing .box-container .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 27rem;
+          flex: 1 1 27rem;
+  margin: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.pricing .box-container .box:nth-child(2),
+.pricing .box-container .box:hover {
+  border: 0.2rem solid var(--pink);
+}
+
+.pricing .box-container .box .title {
+  color: var(--purple);
+  font-size: 2.5rem;
+  padding-top: 1rem;
+}
+
+.pricing .box-container .box .price {
+  font-size: 4rem;
+  color: var(--pink);
+  padding: 1rem 0;
+}
+
+.pricing .box-container .box .price span {
+  font-size: 2rem;
+}
+
+.pricing .box-container .box ul {
+  padding: 1rem 0;
+  list-style: none;
+}
+
+.pricing .box-container .box ul li {
+  font-size: 1.7rem;
+  color: #666;
+  padding: 0.5rem 0;
+}
+
+.pricing .box-container .box ul li .fa-check {
+  color: lightgreen;
+}
+
+.pricing .box-container .box ul li .fa-times {
+  color: tomato;
+}
+
+/* ____________________________________________________________ product we offer __________________________________________________ */
+/* flip card */
+section h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+  color: linear-gradient(90deg, var(--purple), var(--pink));
+}
+
+.products {
+  background: white;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  display: inline-block;
+  background-color: transparent;
+  width: 400px;
+  height: 200px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: white;
+  color: white;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--purple)), to(var(--pink)));
+  background-image: linear-gradient(90deg, var(--purple), var(--pink));
+}
+
+.flip-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.flip-card .flip-card-front h1 {
+  font-family: "Poppins", sans-serif;
+  margin-top: 5px;
+  color: var(--purple);
+  font-size: 20px;
+  font-weight: 800;
+  /* text-shadow: 10px 10px 10px black; */
+}
+
+.flip-card .flip-card-back h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 25px;
+  font-weight: 700;
+  color: white;
+}
+
+/* _____________________________________________Contact us_____________________________________________________________ */
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 4rem;
+}
+
+.contact .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.contact .image img {
+  width: 100%;
+  padding: 2rem;
+}
+
+.contact form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  padding: 2rem 3rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.contact form .heading {
+  text-align: left;
+  padding: 0;
+  padding-bottom: 2rem;
+}
+
+.contact form .alertBox {
+  text-align: center;
+  padding: 10px;
+  background: #79c879;
+  color: white;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.contact form .inputBox {
+  position: relative;
+}
+
+.contact form .inputBox input,
+.contact form .inputBox textarea {
+  width: 100%;
+  background: none;
+  color: #666;
+  margin: 1.5rem 0;
+  padding: 0.5rem 0;
+  font-size: 1.7rem;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+  text-transform: none;
+}
+
+.contact form .inputBox textarea {
+  resize: none;
+  height: 13rem;
+}
+
+.contact form .inputBox label {
+  position: absolute;
+  top: 1.7rem;
+  left: 0;
+  font-size: 1.7rem;
+  color: #666;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.contact form .inputBox input:focus ~ label,
+.contact form .inputBox input:valid ~ label,
+.contact form .inputBox textarea:focus ~ label,
+.contact form .inputBox textarea:valid ~ label {
+  top: -0.5rem;
+  font-size: 1.5rem;
+  color: var(--pink);
+}
+
+/* _________________________________________________Footer section_________________________________________________ */
+.footer {
+  padding-top: 10rem;
+  padding-bottom: 3rem;
+  background: url(footer.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.footer ul {
+  list-style-type: none;
+}
+
+.sub-footer p {
+  font-size: 13px;
+  color: white;
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 25px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.footer li {
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 15px;
+  color: white;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.footer h2 {
+  color: white;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.sub {
+  text-align: center;
+}
+
+.sub p {
+  opacity: 0.7;
+}
+
+.footer form input {
+  width: 230px;
+  padding: 8px;
+  line-height: 3px;
+}
+
+.footer-button {
+  padding: 5px;
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.social-icons {
+  color: white;
+  opacity: 0.7;
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.footer-icon {
+  margin: 10px;
+  color: white;
+}
+
+.footer-icon:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.footer #subscribe {
+  margin-top: 1rem;
+}
+
+/* _______________________________________________Why mussut section____________________________________________ */
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  margin: 0rem 9rem auto;
+  grid-gap: 2rem;
+  -ms-grid-columns: (minmax(35rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+}
+
+.why {
+  min-height: 105vh;
+}
+
+.wrapper .box {
+  width: 35rem;
+  margin: 0 auto;
+  position: relative;
+  -webkit-perspective: 100rem;
+          perspective: 100rem;
+}
+
+.wrapper .box .front-face {
+  background: white;
+  height: 22rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0rem 0.5rem 2rem 0rem rgba(0, 81, 250, 0.1);
+          box-shadow: 0rem 0.5rem 2rem 0rem rgba(0, 81, 250, 0.1);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.box .front-face .icon {
+  height: 8rem;
+}
+
+.box .front-face .icon i {
+  font-size: 6.5rem;
+}
+
+.box .front-face span,
+.box .back-face span {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.box .front-face .icon i,
+.box .front-face span {
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.box .back-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 22rem;
+  width: 100%;
+  padding: 3rem;
+  color: #fff;
+  opacity: 0;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  -webkit-transform: translateY(110px) rotateX(-90deg);
+          transform: translateY(110px) rotateX(-90deg);
+  -webkit-box-shadow: 0rem 0.5rem 2rem 0rem rgba(0, 81, 250, 0.1);
+          box-shadow: 0rem 0.5rem 2rem 0rem rgba(0, 81, 250, 0.1);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.box .back-face p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: justify;
+}
+
+.box:hover .back-face {
+  opacity: 1;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+}
+
+.box:hover .front-face {
+  opacity: 0;
+  -webkit-transform: translateY(-110px) rotateX(90deg);
+          transform: translateY(-110px) rotateX(90deg);
+}
+
+.mussut {
+  position: relative;
+  width: 100vw;
+  height: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* ____________________________________________Media queries______________________________________________________  */
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+  .code h1 {
+    position: relative;
+    font-size: 5rem;
+    color: var(--purple);
+  }
+  .wrapper {
+    margin: 5rem auto;
+  }
+}
+
+@media (max-width: 991px) {
+  section {
+    padding: 0 3%;
+    padding-top: 7.5rem;
+    padding-bottom: 2rem;
+  }
+  .code h1 {
+    position: relative;
+    font-size: 4rem;
+    color: var(--purple);
+  }
+}
+
+@media (max-width: 768px) {
+  header .navbar {
+    display: block;
+  }
+  header label {
+    visibility: visible;
+    opacity: 1;
+  }
+  .code h1 {
+    position: relative;
+    font-size: 3rem;
+    color: var(--purple);
+  }
+  .flip-card {
+    margin-left: 0;
+    width: 300px;
+    height: 200px;
+  }
+  .flip-card-front {
+    background-size: 300px 200px;
+    background-repeat: no-repeat;
+  }
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 1rem 3rem;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    opacity: 0;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+  }
+  header .navbar a {
+    display: block;
+    margin: 2rem 0;
+    font-size: 2rem;
+  }
+  header input:checked ~ .navbar {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    opacity: 1;
+  }
+  header input:checked ~ label::before {
+    content: "\f00d";
+  }
+  .home {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: column-reverse;
+            flex-flow: column-reverse;
+  }
+  .home #user_main img {
+    width: 100vw;
+    -webkit-animation: float 4s linear infinite;
+            animation: float 4s linear infinite;
+  }
+  .home .content h3 {
+    font-size: 3.6rem;
+  }
+  .home .content p {
+    font-size: 1.5rem;
+  }
+  .about {
+    background-position: right;
+  }
+  .newsletter p {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .typing {
+    margin-top: -20%;
+    height: 20%;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .review .box {
+    height: 370px;
+  }
+  .teaser .column .content p {
+    font-size: 1.5rem;
+  }
+  .code h1 {
+    position: relative;
+    font-size: 2rem;
+    color: var(--purple);
+  }
+  .heading {
+    font-size: 3rem;
+  }
+  .about .column .content .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+  .about .column .content .buttons a:last-child {
+    margin: 1rem 0;
+  }
+  .about .column .image img {
+    width: 100%;
+  }
+  header .navbar {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 376px) {
+  header .navbar {
+    padding: 1rem 2rem;
+  }
+  .footer {
+    text-align: center;
+  }
+  .footer ul {
+    margin-top: 30px;
+  }
+  .footer p {
+    margin-top: 0;
+  }
+  .footer a {
+    font-size: 15px;
+  }
+  .review .box {
+    height: 370px;
+  }
+  .wrapper {
+    margin: 5rem auto;
+  }
+  .owl-carousel {
+    position: relative;
+    margin-top: 30px;
+  }
+  .owl-nav {
+    position: absolute;
+    top: -60px;
+    left: 10px;
+  }
+  .uk-card-primary {
+    border-radius: 8px;
+  }
+  .item {
+    background-color: #E3F2FD;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px 0;
+  }
+  .item:hover {
+    background-color: #BBDEFB;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 7px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 7px;
+  }
+  h3 {
+    margin-top: 10px;
+  }
+  .uk-card > :last-child {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .owl-next {
+    background: #E3F2FD;
+  }
+  .owl-theme .owl-nav [class*='owl-'] {
+    background: #383838;
+  }
+  .owl-dots {
+    margin-top: 30px;
+  }
+  .uk-card-title {
+    padding-bottom: 20px;
+  }
+}
+/*# sourceMappingURL=user_style.css.map */
