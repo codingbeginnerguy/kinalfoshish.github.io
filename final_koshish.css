@@ -473,6 +473,9 @@ header .navbar a:hover {
   .home1 {
     padding-top: 4rem;
   }
+  .home {
+    padding-top: 8rem;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -499,7 +502,7 @@ header .navbar a:hover {
     margin-left: 0.6rem;
   }
   .home {
-    padding-top: 16rem;
+    padding-top: 10rem;
   }
   .home .content h1 {
     font-size: 4rem;
@@ -779,7 +782,7 @@ header .navbar a:hover {
     max-height: 90vh;
   }
   .home .content {
-    margin-top: -12rem;
+    margin-top: -8rem;
   }
   .home1 .image {
     height: 50vh;
@@ -803,10 +806,10 @@ header .navbar a:hover {
 
 @media (max-width: 320px) {
   .home {
-    padding-top: 0rem;
+    padding-top: 2rem;
   }
   .home .content {
-    margin-top: -10rem;
+    margin-top: -8rem;
   }
 }
 /*# sourceMappingURL=final_koshish.css.map */
